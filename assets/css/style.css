@@ -354,7 +354,7 @@ section .container {
 
 .section-title h2::after {
   content: "";
-  width: 120px;
+  width: 160px;
   height: 1px;
   display: inline-block;
   background: #dee2e6;
@@ -369,6 +369,46 @@ section .container {
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   color: #fff;
+}
+
+.section-title-summary {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #dee2e6;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.section-title-summary::after {
+  content: "";
+  width: 100px;
+  height: 0.9px;
+  display: inline-block;
+  background: #dee2e6;
+  margin: 4px 10px;
+}
+
+.section-title-summary::-webkit-details-marker {
+  font-size: 2rem;       /* algunos navegadores permiten modificarlo */
+}
+
+.section-title-summary .arrow {
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s;
+}
+
+/* rotate arrow when open */
+details[open] .arrow {
+  transform: rotate(90deg);
 }
 
 /*--------------------------------------------------------------
@@ -481,7 +521,7 @@ section .container {
 .interests .icon-box {
   display: flex;
   align-items: center;
-  padding: 20px;
+   padding: 20px;
   background: #09203a;
   transition: ease-in-out 0.3s;
 }
@@ -653,6 +693,12 @@ section .container {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+.row-flex-gap {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+}
+
 .services .icon-box {
   text-align: center;
   background: #09203a;

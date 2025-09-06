@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-    <title>Image Generator</title>
+    <title>Deep Learning Model for Grayscale Image Colorization</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
   
@@ -43,18 +43,27 @@
   
             <div class="col-lg-12 portfolio-info">
               <br>
-              <h2 style="color:#12d640">Image Generator</h2>
+              <h2 style="color:#68d7c5">DL Model for Grayscale Image Colorization</h2>
               <ul>
-                <li><strong>Tech Stack</strong>: TJava, NodeJS, Python, HTML, CSS, Javascript, AWS(S3, EC2, SQS)</li>
-                <li><strong>Github URL</strong>: <a href="https://github.com/rajaprerak/image_recognition_as_a_service" target="_blank">Project Link</a></li>
+                <li><strong>Tech Stack</strong>: Tech Stack: Python, PyTorch, TensorFlow, Keras, HuggingFace</li>
               </ul>
   
               <p>
-                Built an elastic web application that automatically scales in and scales out 20 EC2 instances based on the traffic of current users with the help of AWS services. Created custom AMIs to deploy image recognition app on EC2 instance; used SQS to handle request and response.              </p>
+                Built deep learning models (U-Net and embedding-based architectures with InceptionV3/ResNet50) for automatic colorization of grayscale images.</p>
               </p>
               <p>
-                Deployed image recognition system on AWS for the clients to access and successfully tested the application by generating 1000 requests.              </p>
+                Used two datasets: 750 human face images and ~7,200 animal images across 6 classes (butterflies, chickens, elephants, horses, spiders, squirrels).</p>
               </p>
+              <p>
+                Deployed experiments with Weights & Biases for monitoring and analytics.</p>
+              </p>
+              <p>
+                Identified limitations: dataset bias (dominance of brown hues), shallow model constraints, and limited generalization. Proposed improvements include dataset expansion and bias correction.</p>
+              </p>
+              <div class="text-center">
+                <img src="../assets/img/project/results_colorization.png" alt="Colorization Results" class="img-fluid rounded shadow">
+                <p><em>Sample results from the colorization model</em></p>
+              </div>
             </div>
   
           </div>

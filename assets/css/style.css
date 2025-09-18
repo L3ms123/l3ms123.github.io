@@ -397,7 +397,7 @@ section .container {
 }
 
 .section-title-summary::-webkit-details-marker {
-  font-size: 2rem;       /* algunos navegadores permiten modificarlo */
+  font-size: 2rem;      
 }
 
 .section-title-summary .arrow {

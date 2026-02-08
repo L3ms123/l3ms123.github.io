@@ -782,6 +782,11 @@ details[open] .arrow {
   margin-bottom: 30px;
 }
 
+.portfolio-details .col-lg-12.portfolio-info {
+    padding: 1rem 0 !important; /* Espacio arriba y abajo */
+    margin: 1rem 0 !important;  /* Márgenes extra */
+}
+
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 15px auto;

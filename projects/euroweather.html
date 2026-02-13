@@ -52,18 +52,18 @@
               Real-time weather display system for European cities and GPS coordinates using AWS DynamoDB as serverless backend.
             </p>
             <p>
-              Single-table design with composite keys (PK: <code>geohash</code>, SK: <code>timestamp</code>) storing temperature, humidity, wind speed, precipitation data with 7-day TTL retention.
+              Single-table design with composite keys (PK: <code>geohash</code>, SK: <code>timestamp</code>) storing temperature, humidity, wind speed, and precipitation data with 7-day TTL retention.
             </p>
             <p>
-              Optimized for future Gradient Boosting predictions using 7 days historical data (~672 samples/city) for feature engineering (temp trends, precip patterns, volatility).
+              Optimized for future Gradient Boosting predictions using 7 days historical data.
             </p>
             <p>
               Cities dataset sourced from <a href="https://github.com/lutangar/cities.json" target="_blank">cities.json</a> (CC BY 4.0). Supports both city name and lat/lon coordinate queries.
             </p>
             
             <div class="text-center">
-              <img src="../assets/img/project/details_euroweather.png" alt="EuroWeather Dashboard" class="img-fluid rounded shadow">
-              <p><em>Weather Barcelona 7/02/2025 17:00</em></p>
+              <img src="../assets/img/project/details_euroweather.png" alt="EuroWeather Dashboard" class="img-fluid rounded shadow" style="max-height: 500px;">
+              <p><em>Sample weather snapshot for Barcelona (07/02/2025, 17:00)</em></p>
             </div>
 
             <div class="text-center mt-4">

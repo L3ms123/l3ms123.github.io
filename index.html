@@ -335,17 +335,35 @@
           <div class="col-lg-12" data-aos="fade-up">
 
               <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a style="color:#68c7d5">Área Metropolitana de Barcelona (AMB)</a><br> </h4>
+                <h4 style="text-align:left;"><a style="color:#68c7d5">Área Metropolitana de Barcelona (AMB)</a></h4>
                 <h5 style="text-align:left;">November 2025 - July 2026</h5>
                 <p style="text-align:left;color:#fff"><em>Intern - AI Engineer</em></p>
-                <p style="text-align:left;color:#fff">Applied artificial intelligence projects for extracting value from existing geospatial data and supporting urban analysis and decision-making.</p>
-                <ul style="text-align:left;">
-                  <li> Historical Aerial Image Super-Resolution</li> 
-                    Designed and trained a deep learning pipeline based on Real-ESRGAN to enhance the visual quality of historical aerial imagery. Handled data preparation, large-scale training, and both quantitative and perceptual evaluation, along with an analysis of the model's limitations for cartographic use.
+                <div style="height:15px;"></div>
 
-                  <li> Beach Object Detection </li>
-                  Built a detection pipeline using YOLO to identify objects in high-resolution coastal orthophotos. Set up labeling guidelines and a review process to keep the dataset reliable as it grew, and tested and compared different models for the task.
-                </ul>
+                <p style="text-align:left;color:#fff">Applied artificial intelligence projects for extracting value from existing geospatial data and supporting urban analysis and decision-making.</p>
+              
+                <div class="project-block" style="margin-top:20px;">
+                  <h6 style="text-align:left;color:#68c7d5;margin-bottom:8px;">Historical Aerial Image Super-Resolution</h6>
+                  <p style="text-align:left;color:#fff;">
+                    Fine-tuned Real-ESRGAN to enhance historical aerial imagery (1974–1996) for cartographic use,
+                    addressing the core challenge that no true high-resolution ground truth exists for historical
+                    flights. Built a synthetic HR/LR training pipeline: selected the highest-quality scans as HR
+                    references, then generated degraded LR pairs via Gaussian blur, noise, JPEG compression,
+                    and multiscale downsampling to simulate real-world degradation.
+                    Trained on a geographical split by flight strip to prevent spatial data leakage between highly correlated adjacent photos.
+                    Trained over 500,000 iterations, evaluating with both distortion metrics (PSNR, SSIM, RMSE) and no-reference perceptual metrics (NIQE, CLIPIQA, MANIQA).
+                    The fine-tuned model improved perceptual quality over the base Real-ESRGAN model, raising CLIPIQA from 0.383 to 0.432 and Ma's score from 5.49 to 6.78 on the test set, while producing visibly sharper textures and edges
+                    than bicubic interpolation.
+                  </p>
+                </div>
+              
+                <div class="project-block" style="margin-top:20px;">
+                  <h6 style="text-align:left;color:#68c7d5;margin-bottom:8px;">Beach Object Detection</h6>
+                  <p style="text-align:left;color:#fff;">
+                    Built a detection pipeline using YOLO to identify people, umbrellas and towels in high-resolution (5cm/px) aerial orthophotos of metropolitan beaches, using Oriented Bounding Boxes (OBB) to handle the arbitrary orientations typical of top-down imagery. Trained different models on a temporal train/val split to test the system's ability to generalize across different campaigns. Designed a tiling-with-overlap inference strategy with two-stage NMS to process full-size orthophotos and eliminate duplicate detections at tile borders, exporting georeferenced results as shapefiles for direct use in GIS systems.
+                    Achieved an average mAP50 of 0.94 and F1 of 0.89 across the three classes on validation.
+                  </p>
+                </div>
               </div>
 
               <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">

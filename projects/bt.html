@@ -44,7 +44,7 @@
           </ul>
 
           <p>
-            Behaviour tree-based autonomous agents for the AAPE simulation. Astronauts and critters navigate a 3D environment, collect resources, and interact dynamically using modular behaviour trees.
+            A multi-agent behaviour tree framework built for the AAPE 3D simulation environment. Astronauts and critters operate as fully autonomous agents, each driven by a modular <code>py_trees</code> behaviour tree that governs perception, decision-making, and action in real time. Agents use ray-cast sensors to detect obstacles and resources, reactively switching between roaming, resource collection, pursuit, and evasion behaviours depending on the scenario. The system communicates with the simulation backend over <code>aiohttp</code>, handling asynchronous state machines for navigation and multi-step actions without blocking the tree's tick cycle.
           </p>
 
           <div class="text-center">
@@ -54,29 +54,28 @@
             <p><em>Agents exploring and interacting in the AAPE simulation environment</em></p>
           </div>
 
-          <div class="row mt-5">
-            <div class="col-md-6 text-center">
-              <img src="../assets/img/project/aape_bt_astronaut.png"
-                   alt="Astronaut behaviour tree diagram"
-                   class="img-fluid rounded shadow"
-                   style="height:200px;">
-              <p><em>Astronaut behaviour tree</em></p>
-            </div>
+          <div class="text-center">
+            <img src="../assets/img/project/aape_bt_astronaut.png"
+                alt="Astronaut behaviour tree diagram"
+                class="img-fluid rounded shadow">
+            <p><em>Astronaut behaviour tree</em></p>
+          </div>
 
-            <div class="col-md-6 text-center">
-              <img src="../assets/img/project/aape_bt_critter.png"
-                   alt="Critter behaviour tree diagram"
-                   style="height:200px;"
-                   class="img-fluid rounded shadow">
-              <p><em>Critter behaviour tree</em></p>
-            </div>
+          <div class="text-center">
+            <img src="../assets/img/project/aape_bt_critter.png"
+                alt="Critter behaviour tree diagram"
+                style="height:200px;"
+                class="img-fluid rounded shadow">
+            <p><em>Critter behaviour tree</em></p>
           </div>
 
           <h4 class="mt-4">Highlights</h4>
           <ul>
-            <li>Implemented modular behaviour trees for multiple agent types.</li>
-            <li>Integrated ray-cast sensors for obstacle and entity detection.</li>
-            <li>Designed multi-agent spawning system with JSON configuration packs.</li>
+            <li>Designed modular, reusable behaviour tree nodes (Selectors, Sequences with configurable memory) shared across astronaut and critter agent types.</li>
+            <li>Built async state-machine behaviours (navigation, obstacle avoidance, pursuit/evasion) that run non-blocking within the behaviour tree tick loop.</li>
+            <li>Integrated ray-cast sensor processing for real-time obstacle detection, entity tagging, and reactive avoidance logic.</li>
+            <li>Multi-agent spawning system driven by JSON configuration packs, enabling scenario setup without code changes.</li>
+            <li>Implemented priority-based decision arbitration (e.g. return-to-base > flee > collect > roam) to produce coherent, interruptible agent behaviour under changing conditions.</li>
           </ul>
 
           <div class="text-center mt-4">

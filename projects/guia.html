@@ -52,28 +52,49 @@
                  alt="GuIA system architecture diagram: web interface, RAG engine, Knowledge Graph, and LLM"
                  style="height:400px;"
                  class="img-fluid rounded shadow">
-            <p><em>End-to-end RAG pipeline: user prompt → Cypher retrieval over the Neo4j Knowledge Graph → grounded LLM generation → streamed answer</em></p>
+            <p><em>End-to-end RAG pipeline</em></p>
           </div>
 
-          <div class="text-center">
-            <img src="../assets/img/project/guia_onboarding.png"
-                 alt="GuIA onboarding flow: language, guide style, and accessibility options"
-                 style="height:400px;"
-                 class="img-fluid rounded shadow">
-            <p><em>Three-step onboarding: language/style personalization, accessibility options, and AI/privacy notice</em></p>
+          <div style="display:flex; justify-content:center; gap:20px; align-items:center;">
+
+            <div class="text-center">
+              <img src="../assets/img/project/guia_onboarding.png"
+                  alt="GuIA onboarding flow: language, guide style, and accessibility options"
+                  style="height:400px;"
+                  class="img-fluid rounded shadow">
+              <p><em>Three-step onboarding - personalization, accessibility options, and AI/privacy notice.</em></p>
+            </div>
+
+            <div class="text-center">
+              <img src="../assets/img/project/guia_chat.png"
+                  alt="GuIA chat interface showing a conversation about an artwork"
+                  style="height:400px;"
+                  class="img-fluid rounded shadow">
+              <p><em>Main chat interface showing audio and location menus</em></p>
+            </div>
+
           </div>
+
 
           <div class="text-center">
             <img src="../assets/img/project/guia_knowledge_graph.png"
                 alt="Neo4j Knowledge Graph visualization of museum artworks, artists, and rooms"
                 style="height:400px;"
                 class="img-fluid rounded shadow">
-            <p><em>Curated Knowledge Graph — Visualization of the entity–relationship graph in Neo4j for the Museu del Renaixement, including artists, artworks, techniques, rooms, and descriptions.</em></p>
+            <p><em>Curated Knowledge Graph — Visualization of the entity–relationship graph in Neo4j.</em></p>
+          </div>
+
+          <div class="text-center">
+            <img src="../assets/img/project/guia_admin.png"
+                 alt="GuIA admin dashboard showing analytics and Knowledge Graph management"
+                 style="height:400px;"
+                 class="img-fluid rounded shadow">
+            <p><em>Admin dashboard — museum staff sync the Knowledge Graph, review unresolved questions, and monitor usage analytics</em></p>
           </div>
 
           <h4 class="mt-4">Information Gathering & Methodology</h4>
           <p>
-            The Knowledge Graph was built from heterogeneous sources: a museum-provided artwork inventory (.xlsx), an authored audioguide script and room descriptions (.docx), supplemented with museum-website content, Wikipedia data on artists and techniques, and AI-generated visual descriptions for accessibility. Building the graph itself was an iterative process, an initial attempt using an LLM-based graph constructor produced thousands of duplicated, inconsistently-named relationships, which was discarded in favor of a custom parser populating a fixed schema, giving the museum direct control over node and relationship creation.
+            The Knowledge Graph was built from heterogeneous sources: a museum-provided artwork inventory, an authored audioguide script and room descriptions, supplemented with museum-website content, Wikipedia data on artists and techniques, and AI-generated visual descriptions for accessibility. Building the graph itself was an iterative process, an initial attempt using an LLM-based graph constructor produced thousands of duplicated, inconsistently-named relationships, which was discarded in favor of a custom parser populating a fixed schema, giving the museum direct control over node and relationship creation. 
           </p>
 
           <h4 class="mt-4">Highlights</h4>
@@ -81,7 +102,8 @@
             <li>Built a RAG pipeline where the LLM generates read-only Cypher queries against a Neo4j Knowledge Graph, with query repair, retry, and deterministic fallbacks for navigation and location intents.</li>
             <li>Designed a curated Knowledge Graph schema (ArtPiece, Artist, Technique, Sala, Planta, VisualDescription) via a custom parser, after discarding LLM-based graph construction due to unreliable, duplicated relationships.</li>
             <li>Implemented an accessibility-first Easy-Read pipeline integrated via a separately deployed iDEM API, with automatic fallback to standard generation on failure.</li>
-             <li>Designed dual onboarding tutorials (visual step-by-step and spoken/screen-reader-friendly) informed directly by accessibility expert interviews.</li>
+            <li>Designed dual onboarding tutorials (visual step-by-step and spoken/screen-reader-friendly) informed directly by accessibility expert interviews.</li>
+            <li>Built an admin dashboard for content sync, unresolved-question review, and metadata-only analytics, keeping curatorial control with the museum.</li>
             <li>Engineered a four-component automated evaluation framework (retrieval recall, faithfulness, cultural-bias deviation via KL divergence, prompt sensitivity) run across Catalan, Spanish, and English.</li>
             <li>Achieved ~97% retrieval recall and ~95% generation faithfulness across languages, with zero fabricated answers when no context was retrieved.</li>
             <li>Conducted co-design and evaluation with accessibility organisations (Aura Fundació, Asociación Discapacidad Visual Catalunya, Down Tarragona), directly shaping interface and pipeline decisions.</li>
@@ -105,14 +127,4 @@
 <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
 <script src="../assets/vendor/php-email-form/validate.js"></script>
-<script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="../assets/vendor/counterup/counterup.min.js"></script>
-<script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="../assets/vendor/venobox/venobox.min.js"></script>
-
-<!-- Template Main JS File -->
-<script src="../assets/js/main.js"></script>
-
-</body>
-</html>
+<script
